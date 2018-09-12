@@ -37,7 +37,7 @@ public class SeleniumTest {
         barreRecherche.sendKeys("french");
         barreRecherche.sendKeys(Keys.ENTER);
 
-        WebElement premierResultat = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[2]/div/div/div/div/h3/a"));
+        WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
         Assert.assertEquals(expected, premierResultat.getText());
     }
 
@@ -51,7 +51,7 @@ public class SeleniumTest {
         WebElement buttonRecherche = driver.findElement(By.className("lsb"));
         buttonRecherche.click();
 
-        WebElement premierResultat = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[2]/div/div/div/div/h3/a"));
+        WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
         Assert.assertEquals(expected, premierResultat.getText());
     }
 }
